@@ -14,13 +14,14 @@ $(document).ready(function () {
 function resetAndRender() {
   reset();
   render($("#display"), image);
+
 }
 
 // this function applies the filters to the image and is where you should call
 // all of your apply functions
 function applyAndRender() {
   // Multiple TODOs: Call your apply function(s) here
-
+applyFilter()
   
 
   // do not change the below line of code
@@ -32,13 +33,12 @@ function applyAndRender() {
 /////////////////////////////////////////////////////////
 
 // TODO 1, 2, 3 & 5: Create the applyFilter function here
-
-
-// TODO 9 Create the applyFilterNoBackground function
-
-
-// TODO 6: Create the keepInBounds function
-
+function applyFilter (){
+for(var row = 0; row < image.length ; col += 1){
+  var currentArray = image[row]
+  for (var col = 0; col < currentArray.length ; col += 1) {
+    
+  }
 
 // TODO 4: Create reddify filter function
 
