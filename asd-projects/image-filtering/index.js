@@ -14,15 +14,13 @@ $(document).ready(function () {
 function resetAndRender() {
   reset();
   render($("#display"), image);
-
 }
 
 // this function applies the filters to the image and is where you should call
 // all of your apply functions
 function applyAndRender() {
   // Multiple TODOs: Call your apply function(s) here
-applyFilter()
-  
+  applyFilter();
 
   // do not change the below line of code
   render($("#display"), image);
@@ -33,17 +31,22 @@ applyFilter()
 /////////////////////////////////////////////////////////
 
 // TODO 1, 2, 3 & 5: Create the applyFilter function here
-function applyFilter (){
-for(var row = 0; row < image.length ; col += 1){
-  var currentArray = image[row]
-  for (var col = 0; col < currentArray.length ; col += 1) {
-    
+function applyFilter() {
+  for (var row = 0; row < image.length; row += 1) {
+    var currentArray = image[row];
+    for (var col = 0; col < currentArray.length; col += 1) {
+      var pixel = image[row][col];
+      console.log(pixel)
+      var pixelArray = rgbStringToArray(pixel);
+      // This is where I’ll modify the color values later
+      pixelArray[RED] = 200;
+      var updatedPixel = rgbArrayToString(pixelArray);
+      pixel = updatedPixel;
+    }
   }
-
+}
 // TODO 4: Create reddify filter function
 
-
 // TODO 7 & 8: Create more filter functions
-
 
 // CHALLENGE code goes below here
