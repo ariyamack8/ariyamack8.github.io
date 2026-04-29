@@ -71,7 +71,14 @@ function runProgram() {
       walker.speedY = 5;
     }
   }
-  function handleKeyUp(event) {}
+  function handleKeyUp(event) {
+    if (event.which === KEY.LEFT || event.which === KEY.RIGHT) {
+      walker.speedX = 0;
+    }
+    if (event.which === KEY.UP || event.which === KEY.DOWN) {
+      walker.speedY = 0;
+    }
+  }
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
@@ -79,7 +86,7 @@ function runProgram() {
     if (walker.x < 0) {
       walker.x -= walker.speedX;
     }
-    if (walker.x > $("#board").width() - $("walker").width()) {
+    if (walker.x > $("#board").width() - $("#walker").width()) {
       walker.x -= walker.speedX;
     }
     if (walker.y < 0) {
